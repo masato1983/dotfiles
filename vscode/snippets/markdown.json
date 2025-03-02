@@ -1,0 +1,11 @@
+{
+	"break html tag": {
+		"prefix": "br",
+		"body": [
+			""
+			"<br>"
+			""
+		],
+		"description": "break html tag"
+	}
+}

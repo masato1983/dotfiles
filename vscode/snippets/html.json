@@ -1,0 +1,147 @@
+{
+  // responsive image sizes & mime 3
+  "responsive image sizes & mime 3": {
+    "prefix": "rism3",
+    "body": [
+      "<picture>",
+      "    <source ",
+      "        type=\"image/webp\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:${14:top}'] %>$2.webp $3w, <%= meta.path['img:${14:top}'] %>$4.webp $5w, <%= meta.path['img:${14:top}'] %>$6.webp $7w\"",
+      "    />",
+      "    <img",
+      "        class=\"$10__image\"",
+      "        width=\"$11\"",
+      "        height=\"$12\"",
+      "        src=\"<%= meta.path['img:${14:top}'] %>$6.${15:jpg}\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:${14:top}'] %>$2.${15:jpg} $3w, <%= meta.path['img:${14:top}'] %>$4.${15:jpg} $5w, <%= meta.path['img:${14:top}'] %>$6.${15:jpg} $7w\"",
+      "        alt=\"$13\"",
+      "        decoding=\"async\"",
+      "        loading=\"${16:eager or lazy}\"",
+      "    />",
+      "</picture>"
+    ],
+    "description": "responsive image sizes & mime"
+  },
+
+  // responsive image sizes & mime & 4
+  "responsive image sizes & mime 4": {
+    "prefix": "rism4",
+    "body": [
+      "<picture>",
+      "    <source ",
+      "        type=\"image/webp\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:${14:top}'] %>$2.webp $3w, <%= meta.path['img:${14:top}'] %>$4.webp $5w, <%= meta.path['img:${14:top}'] %>$6.webp $7w, <%= meta.path['img:${14:top}'] %>$8.webp $9w\"",
+      "    />",
+      "    <img",
+      "        class=\"$10__image\"",
+      "        width=\"$11\"",
+      "        height=\"$12\"",
+      "        src=\"<%= meta.path['img:${14:top}'] %>$6.${15:jpg}\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:${14:top}'] %>$2.${15:jpg} $3w, <%= meta.path['img:${14:top}'] %>$4.${15:jpg} $5w, <%= meta.path['img:${14:top}'] %>$6.${15:jpg} $7w, <%= meta.path['img:${14:top}'] %>$8.${15:jpg} $9w\"",
+      "        alt=\"$13\"",
+      "        decoding=\"async\"",
+      "        loading=\"${16:eager or lazy}\"",
+      "    />",
+      "</picture>"
+    ],
+    "description": "responsive image sizes & mime"
+  },
+
+  // responsive image sizes & mime & art
+  "responsive image sizes & mime & art": {
+    "prefix": "risma",
+    "body": [
+      "<picture>",
+      "    <source ",
+      "        type=\"image/webp\"",
+      "        media=\"(min-width: <%= breakpoints.breakpoint.${22:tablet or laptop} %>)\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:#{19:top}'] %>$2.webp $3w, <%= meta.path['img:#{19:top}'] %>$4.webp $5w, <%= meta.path['img:#{19:top}'] %>$6.webp $7w\"",
+      "    />",
+      "    <source ",
+      "        type=\"image/webp\"",
+      "        sizes=\"$8\"",
+      "        srcset=\"<%= meta.path['img:#{19:top}'] %>$9.webp $10w, <%= meta.path['img:#{19:top}'] %>$11.webp $12w, <%= meta.path['img:#{19:top}'] %>$13.webp $14w\"",
+      "    />",
+      "    <source ",
+      "        media=\"(min-width: <%= breakpoints.breakpoint.${22:tablet or laptop} %>)\"",
+      "        sizes=\"$1\"",
+      "        srcset=\"<%= meta.path['img:#{19:top}'] %>$2.${20:jpg} $3w, <%= meta.path['img:#{19:top}'] %>$4.${20:jpg} $5w, <%= meta.path['img:#{19:top}'] %>$6.${20:jpg} $7w\"",
+      "    />",
+      "    <img",
+      "        class=\"$15__image\"",
+      "        width=\"$16\"",
+      "        height=\"$17\"",
+      "        src=\"<%= meta.path['img:#{19:top}'] %>$13.${20:jpg}\"",
+      "        sizes=\"$8\"",
+      "        srcset=\"<%= meta.path['img:#{19:top}'] %>$9.${20:jpg} $10w, <%= meta.path['img:#{19:top}'] %>$11.${20:jpg} $12w, <%= meta.path['img:#{19:top}'] %>$13.${20:jpg} $14w\"",
+      "        alt=\"$18\"",
+      "        decoding=\"async\"",
+      "        loading=\"${21:eager or lazy}\"",
+      "    />",
+      "</picture>"
+    ],
+    "description": "responsive image sizes & mime & art"
+  },
+
+  // php tag
+  "php": {
+    "prefix": "php",
+    "body": ["<?php $0 ?>"],
+    "description": "php tag"
+  },
+
+  // php tag multiline
+  "php tag multiline": {
+    "prefix": "php-multiline",
+    "body": [
+      "<?php",
+      "$0",
+      "?>",
+    ],
+    "description": "php tag multiline"
+  },
+
+  // php ifelse
+  "ifelse": {
+    "prefix": "ifelse",
+    "body": [
+      "<?php if ($$includeEnString) { ?>",
+      "<?php } else { ?>",
+      "<?php } ?>"
+    ],
+    "description": "ifelse"
+  },
+
+  // php foreach
+  "foreach": {
+    "prefix": "foreach",
+    "body": ["<?php foreach ($1 as $2) : ?>", "$3", "<?php endforeach; ?>"],
+    "description": "foreach"
+  },
+
+  // php if
+  "if": {
+    "prefix": "if",
+    "body": ["<?php if ($1) : ?>", "$2", "<?php endif; ?>"],
+    "description": "if"
+  },
+
+  // svg
+  "svg": {
+    "scope": "html,php",
+    "prefix": "sprite-symbol",
+    "body": [
+        "        <i class=\"icon ${1:icon-name}\">",
+        "            <svg role=\"${2:img}\" aria-label=\"${1:icon-name}\">",
+        "                <use href=\"#${1:icon-name}\">",
+        "            </svg>",
+        "        </i>"
+    ],
+    "description": "svg-sprite-symbolのHTMLスニペット"
+}
+}

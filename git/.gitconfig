@@ -1,0 +1,108 @@
+[core]
+    # テキストビューア（コマンドの出力を表示するツール）
+    pager = delta
+
+    # テキストエディタ（コミット時に起動）
+    editor = /opt/homebrew/bin/nvim
+
+[user]
+    # ユーザー設定
+    name = Masato Furuta
+    
+    # ユーザーのメールアドレス設定
+    email = 50264750+masato1983@users.noreply.github.com
+
+[init]
+    # デフォルトブランチ設定
+    defaultBranch = main
+
+[includeIf "gitdir:~/Glide/"]
+    path = ~/Glide/.gitconfig
+
+[includeIf "gitdir:~/Glide/documents/"]
+    path = ~/Glide/documents/.gitconfig
+
+[includeIf "gitdir:~/Glide/library/"]
+    path = ~/Glide/library/.gitconfig
+
+[includeIf "gitdir:~/Glide/personal/"]
+    path = ~/Glide/personal/.gitconfig
+
+[includeIf "gitdir:~/Glide/projects/"]
+    path = ~/Glide/projects/.gitconfig
+
+[interactive]
+    # git add --patch などの対話的操作の diff をパイプするコマンド
+    diffFilter = delta --color-only
+
+[delta]
+    # テーマ設定
+    # https://github.com/catppuccin/catppuccin/discussions/1829#discussioncomment-7686109
+    syntax-theme = Catppuccin-mocha
+
+    # n, N キーによる diff セクション間の移動
+    navigate = true
+
+    # 機能追加
+    # decorations: ファイル名や行号番号表示
+    features = decorations
+
+    # diff を左右に並べて表示
+    side-by-side = true
+
+[delta "interactive"]
+    # 追加／削除行の +/- マーカー表示
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    # コミットハッシュの装飾スタイル設定
+    commit-decoration-style = blue ol
+
+    # コミットハッシュのスタイル設定
+    commit-style = raw
+
+    # ファイルセクションのスタイル設定
+    file-style = blue
+
+    # 'box', 'ul' (underline), 'ol' (overline) の少なくとも一つを指定
+    hunk-header-decoration-style = blue box
+
+    # ファイルパス部分のスタイル設定
+    hunk-header-file-style = red
+
+    # 行番号のスタイル設定
+    hunk-header-line-number-style = blue
+
+    # ハンクヘッダーに含める情報とシンタックスハイライトの設定
+    hunk-header-style = line-number syntax
+
+    # 行番号のスタイル設定
+    line-numbers-minus-style = red
+    line-numbers-zero-style = gray
+    line-numbers-plus-style = green
+
+[diff]
+    # difftool で使用する diff ツールの設定
+    tool = vscode
+
+    # colorMoved 機能の設定（コードの移動の色分け）
+    colorMoved = default
+
+[difftool "vscode"]
+    # difftool を起動するコマンド設定
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    # mergetool で使用する merge ツールの設定
+    tool = vscode
+
+    # コンフリクトスタイル設定
+    confilictstyle = diff3
+
+[mergetool "vscode"]
+    # mergetool を起動するコマンド設定
+	cmd = code --wait $MERGED
+
+[pull]
+    # git pull 実行時の rebase 設定
+	rebase = false

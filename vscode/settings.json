@@ -1,0 +1,84 @@
+{
+    // neovim
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/masato/.config/nvim/init.lua",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+
+    // editor
+    "editor.formatOnSave": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.accessibilitySupport": "off",
+
+    // prettier
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true,
+    "[astro][html][javascript][json][jsonc][markdown][yaml][yml][scss]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // shellcheck
+    "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
+
+    // shfmt
+    "shfmt.executablePath": "/opt/homebrew/bin/shfmt",
+    "[shellscript]": {
+        "editor.formatOnSave": true
+    },
+
+    // stylelint
+    "css.validate": false,
+    "scss.validate": false,
+    "stylelint.validate": ["scss"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+    },
+
+    // eslint
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "javascript.suggestionActions.enabled": false,
+
+    // markdown user snippets の有効化
+    // https://github.com/Microsoft/vscode/issues/28048
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "on"
+        }
+    },
+
+    // extension
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    // terminal
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+    "terminal.integrated.lineHeight": 1.4,
+
+    // window
+    "window.commandCenter": false,
+    "window.title": " ",
+    "window.zoomLevel": 1,
+
+    // reference
+    "html.hover.references": false,
+    "scss.hover.references": false,
+    "less.hover.references": false,
+    "css.hover.references": false,
+
+    // theme
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+
+    // other
+    "explorer.compactFolders": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.tree.stickyScrollMaxItemCount": 2,
+    "github.copilot.editor.enableAutoCompletions": true
+}

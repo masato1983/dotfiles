@@ -1,0 +1,152 @@
+{
+  // Place your snippets for scss here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+
+  // Sass-mq(from)
+  "sass-mq-from-mobile": {
+    "prefix": "mfm",
+    "body": ["@include mq(\\$from: mobile) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-landscape": {
+    "prefix": "mfls",
+    "body": ["@include mq(\\$from: landscape) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-tablet": {
+    "prefix": "mft",
+    "body": ["@include mq(\\$from: tablet) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-laptop": {
+    "prefix": "mflt",
+    "body": ["@include mq(\\$from: laptop) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-desktop": {
+    "prefix": "mfd",
+    "body": ["@include mq(\\$from: desktop) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-wide": {
+    "prefix": "mfw",
+    "body": ["@include mq(\\$from: wide) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-from-full": {
+    "prefix": "mff",
+    "body": ["@include mq(\\$from: full) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  // sass-mq(until)
+  "sass-mq-until-mobile": {
+    "prefix": "mum",
+    "body": ["@include mq(\\$until: mobile) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-landscape": {
+    "prefix": "muls",
+    "body": ["@include mq(\\$until: landscape) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-tablet": {
+    "prefix": "mut",
+    "body": ["@include mq(\\$until: tablet) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-laptop": {
+    "prefix": "mult",
+    "body": ["@include mq(\\$until: laptop) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-desktop": {
+    "prefix": "mud",
+    "body": ["@include mq(\\$until: desktop) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-wide": {
+    "prefix": "muw",
+    "body": ["@include mq(\\$until: wide) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  "sass-mq-until-full": {
+    "prefix": "muf",
+    "body": ["@include mq(\\$until: full) {", "\t$1", "}"],
+    "description": "https://www.npmjs.com/package/@mcaskill/sass-mq"
+  },
+
+  // prefer-reduced-motion
+  "prefer-reduced-motion": {
+    "prefix": "prm",
+    "body": [
+      "    @media screen and (prefers-reduced-motion: reduce) {",
+      "      transition: none;",
+      "    }"
+    ],
+    "description": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+  },
+
+  // rem
+  "postcss-rem": {
+    "prefix": "rem",
+    "body": "rem(${1:font-size}px)",
+    "description": "https://www.npmjs.com/package/postcss-rem"
+  },
+
+  // em
+  "postcss-em": {
+    "prefix": "em",
+    "body": "em(${1:font-size}px, $2:base-font-size)",
+    "description": "https://www.npmjs.com/package/postcss-em"
+  },
+
+  // div
+  "div": {
+    "prefix": "div",
+    "body": "div($1, $2)"
+  },
+
+  // icon-stroke-width
+  "icon-stroke-width": {
+    "prefix": "isw",
+    "body": "icon-stroke-width(${1:icon-size}, ${2:icon-stroke-width})"
+  },
+
+  // font-fluid
+  "font-fluid": {
+    "prefix": "ff",
+    "body": "${1:font-size}: #{fluid(${2:$min-size}, ${3:$max-size})};",
+    "description": "https://www.smashingmagazine.com/2022/10/fluid-typography-clamp-sass-functions/"
+  },
+
+  // font-fluid-wide
+  "font-fluid-wide": {
+    "prefix": "ffw",
+    "body": "${1:font-size}: #{fluid-wide(${2:$min-size})};",
+    "description": "https://www.smashingmagazine.com/2022/10/fluid-typography-clamp-sass-functions/"
+  }
+}

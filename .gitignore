@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+
+# すべての依存関係が正常にインストールされた場合に出力される Brewfile.lock.json には、
+# 依存関係とシステムのステータス情報が含まれています。
+#
+# しかし、npm のパッケージ管理システムで使用される package.lock.json とは異なり、
+# インストール時に Brewfile.lock.json を参照することはありませんので、
+# GitHub で管理する必要は無いと考えています。
+#
+# Brewfile.lock.json に関する議論は、以下の issue を参照してください。
+# @see https://github.com/Homebrew/homebrew-bundle/pull/552
+# @see https://github.com/Homebrew/homebrew-bundle/issues/1188
+Brewfile.lock.json

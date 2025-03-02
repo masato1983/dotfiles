@@ -1,0 +1,35 @@
+Applications
+Creative\ Cloud\ Files/
+Creative\ Cloud\ Files\ *
+Design
+Dev
+Documents
+Downloads
+Glide
+Library
+Local\ Sites
+Music
+Movies
+Pictures
+Sites
+.atom
+.cache
+.gitkraken
+.lesshst
+.local
+.node-gyp
+.npm
+.nvm
+.quokka
+.rbenv
+.rnd
+.tldrc
+.Trash
+.vscode/extensions
+.z
+.zcompdump-*
+.zsh_history
+**/*.git
+**/*.min.css
+**/wp/wp-content/plugins
+**/wp/wp-include

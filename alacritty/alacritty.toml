@@ -1,0 +1,23 @@
+general.import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 40
+padding.y = 10
+
+decorations = "Buttonless"
+
+opacity = 0.9
+blur = true
+
+option_as_alt = "both"
+
+[font]
+normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Regular" }
+bold = { style = "Bold" }
+size = 17
+offset = { x = 0, y = 4 }

@@ -1,0 +1,6 @@
+[user]
+	name = GlideArtsStudioMF
+	email = furuta@glide.co.jp
+
+[url "git@github-glide"]
+    insteadOf = git@github.com

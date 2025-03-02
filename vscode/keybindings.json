@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "vscode-neovim.compositeKeys": {
+            "jj": {
+                "command": "vscode-neovim.escape"
+            }
+        }
+    }
+]

@@ -1,0 +1,3 @@
+gui:
+    # One of 'auto' (default) | 'en' | 'zh-CN' | 'zh-TW' | 'pl' | 'nl' | 'ja' | 'ko' | 'ru'
+    language: en
