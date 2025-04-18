@@ -135,3 +135,6 @@ fpath=(/Users/masato/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Added by Windsurf
+export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"

@@ -3,7 +3,10 @@ theme = catppuccin-mocha
 
 # Font
 font-family = JetBrainsMonoNL Nerd Font Mono
+font-family = BIZ UDGothic
+font-feature = -calt
 font-feature = -dlig
+font-feature = -liga
 font-size = 17
 
 font-style-bold = false

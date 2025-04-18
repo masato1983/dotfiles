@@ -49,6 +49,8 @@ return {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "stylelint", -- scss linter
+        "eslint", -- eslint linter
+        "markdownlint-cli2", -- markdown linter
       },
     })
   end,

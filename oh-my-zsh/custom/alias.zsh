@@ -123,6 +123,8 @@ alias gdun='git diff $(git_current_branch)..origin/$(git_current_branch) --name-
 alias gloggp='git log --graph --pretty="%Cred%h%Creset %s -%C(auto)%d%Creset %Cgreen(%ar) %C(bold blue)<%an>%Creset"'
 alias gloggpa='git log --graph --pretty="%Cred%h%Creset %s -%C(auto)%d%Creset %Cgreen(%ar) %C(bold blue)<%an>%Creset" --all'
 alias gloggps='git log --graph --pretty="%Cred%h%Creset %s -%C(auto)%d%Creset %Cgreen(%ar) %C(bold blue)<%an>%Creset" --stat'
+alias gcpn='git cherry-pick --no-commit'
+alias gpot='git push origin --tags'
 
 # github cli
 alias ghb='gh browse'

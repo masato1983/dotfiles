@@ -18,7 +18,7 @@ set -g base-index 1
 set -g renumber-windows on
 
 # ステータスバーを非表示にします。
-set -g status off
+# set -g status off
 
 # ステータスバーを上部に表示します。
 # set -g status-position top

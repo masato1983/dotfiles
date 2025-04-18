@@ -47,10 +47,14 @@ return {
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = "Go to previous diagnostic"
-      keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+      keymap.set("n", "[d", function()
+        vim.diagnostic.jump({ count = -1 })
+      end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = "Go to next diagnostic"
-      keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+      keymap.set("n", "]d", function()
+        vim.diagnostic.jump({ count = 1 })
+      end, opts) -- jump to next diagnostic in buffer
 
       opts.desc = "Show documentation for what is under cursor"
       keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
@@ -62,13 +66,17 @@ return {
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    local x = vim.diagnostic.severity
+
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = "●",
+      },
+      signs = { text = { [x.ERROR] = " ", [x.WARN] = " ", [x.HINT] = "󰠠 ", [x.INFO] = " " } },
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+    })
 
     -- configure html server
     lspconfig["html"].setup({
@@ -114,13 +122,14 @@ return {
     lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = { "typescript" },
     })
 
     -- configure eslint server
     lspconfig["eslint"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "javascript" },
+      filetypes = { "javascript", "typescript" },
     })
 
     -- configure json server
