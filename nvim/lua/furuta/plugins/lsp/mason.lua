@@ -10,7 +10,6 @@ return {
 
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
@@ -29,13 +28,14 @@ return {
       ensure_installed = {
         "bashls",
         "html",
+        "twiggy_language_server",
         "intelephense",
         "cssls",
         "css_variables",
         "somesass_ls",
         "stylelint_lsp",
-        "ts_ls",
         "eslint",
+        "ts_ls",
         "lua_ls",
         "jsonls",
         "emmet_language_server",

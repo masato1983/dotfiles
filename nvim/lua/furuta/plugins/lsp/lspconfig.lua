@@ -118,18 +118,18 @@ return {
       },
     })
 
-    -- configure typescript server
-    lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "typescript" },
-    })
-
     -- configure eslint server
     lspconfig["eslint"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "javascript", "typescript" },
+    })
+
+    -- configure typescript server
+    lspconfig["ts_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "typescript" },
     })
 
     -- configure json server
@@ -143,7 +143,7 @@ return {
     lspconfig["emmet_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "php" },
+      filetypes = { "html", "php", "css", "scss" },
       init_options = { extensionsPath = { vim.fn.getcwd() .. "/" } },
     })
 

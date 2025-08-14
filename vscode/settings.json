@@ -80,5 +80,6 @@
     "explorer.compactFolders": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.tree.stickyScrollMaxItemCount": 2,
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.nextEditSuggestions.enabled": true
 }

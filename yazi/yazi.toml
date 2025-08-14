@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 ratio          = [ 3, 3, 3 ]
 show_hidden    = true
 

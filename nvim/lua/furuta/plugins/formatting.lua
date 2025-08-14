@@ -19,6 +19,7 @@ return {
         markdown = { "prettier" },
         mdx = { "prettier" },
         lua = { "stylua" },
+        xml = { "prettier" },
       },
       format_on_save = {
         lsp_fallback = false,

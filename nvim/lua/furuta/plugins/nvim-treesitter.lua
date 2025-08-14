@@ -28,6 +28,7 @@ return {
           "javascript",
           "typescript",
           "tsx",
+          "twig",
           "yaml",
           "html",
           "css",
