@@ -5,13 +5,21 @@ return {
   config = function()
     local conform = require("conform")
 
-    conform.setup({
-      formatters_by_ft = {
+    local function get_formatters()
+      local project_config = vim.fn.findfile(".conform.json", ".;")
+      if project_config ~= "" then
+        local config_content = table.concat(vim.fn.readfile(project_config), "\n")
+        local ok, config = pcall(vim.fn.json_decode, config_content)
+        if ok and config.formatters_by_ft then
+          return config.formatters_by_ft
+        end
+      end
+      return {
         sh = { "shfmt" },
         html = { "prettier" },
         javascript = { "prettier" },
         typescript = { "prettier" },
-        css = { "prettier" },
+        css = { "prettier", "stylelint" },
         scss = { "prettier", "stylelint" },
         php = { "php_cs_fixer" },
         json = { "prettier" },
@@ -20,7 +28,11 @@ return {
         mdx = { "prettier" },
         lua = { "stylua" },
         xml = { "prettier" },
-      },
+      }
+    end
+
+    conform.setup({
+      formatters_by_ft = get_formatters(),
       format_on_save = {
         lsp_fallback = false,
         async = false,

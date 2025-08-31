@@ -23,6 +23,9 @@ bind -r m resize-pane -Z 5
 bind -T copy-mode-vi 'v' send -X begin-selection
 bind -T copy-mode-vi 'y' send -X copy-selection
 
+# open opencode in current directory in a popup
+bind o popup -E -d "#{pane_current_path}" -w 90% -h 90% "opencode"
+
 # 設定ファイルの再読み込み
 bind r source-file ~/.tmux.conf \; display-message "Reloaded!"
 
