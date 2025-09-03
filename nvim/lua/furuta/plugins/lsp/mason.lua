@@ -30,6 +30,7 @@ return {
         "html",
         "twiggy_language_server",
         "intelephense",
+        "copilot_language_server",
         "cssls",
         "css_variables",
         "somesass_ls",
