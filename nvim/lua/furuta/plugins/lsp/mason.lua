@@ -39,6 +39,7 @@ return {
         "lua_ls",
         "jsonls",
         "emmet_language_server",
+        "python",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
