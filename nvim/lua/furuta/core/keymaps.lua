@@ -17,8 +17,8 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
 
 -- 行連結時のカーソル移動を無効化
-keymap.set("n", "J", "mzJ`z")
-keymap.set("n", "gJ", "mzgJ`z")
+keymap.set("n", "gJ", "mzJ`z")
+keymap.set("n", "J", "mzgJ`z")
 
 -- 折り返しを無視した行移動
 keymap.set("n", "j", "gj")
