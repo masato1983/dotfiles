@@ -24,6 +24,9 @@ keymap.set("n", "J", "mzgJ`z")
 keymap.set("n", "j", "gj")
 keymap.set("n", "k", "gk")
 
+-- 行末までヤンク
+keymap.set("n", "<leader>y", "^y$")
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
