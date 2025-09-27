@@ -6,7 +6,7 @@ return {
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
     opts = {
-      modle = "gpt-5 mini",
+      model = "gpt-5 mini",
       window = {
         layout = "vertical",
         width = 0.5,
