@@ -131,12 +131,15 @@ alias ghb='gh browse'
 alias ghil='gh issue list'
 alias ghol='gh org list'
 alias ghprc='gh pr create'
-alias ghprm='gh pr merge'  
+alias ghprm='gh pr merge'
 alias ghprl='gh pr list'
 alias ghprlc='gh pr list --closed'
 alias ghrv='gh repo view'
 alias ghrl='gh run list'
 alias ghrw='gh run watch'
+
+# fork
+alias f='fork'
 
 # lazygit
 alias lg='lazygit'

@@ -130,11 +130,14 @@ eval "$(starship init zsh)"
 
 # [fzf](https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/masato/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
+
+# JJ completion
+source <(jj util completion zsh)
 
 # Added by Windsurf
 export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"

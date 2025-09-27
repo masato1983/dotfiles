@@ -6,19 +6,13 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
-    -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
-
-    -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
+
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
-      -- set keybinds
       opts.desc = "Show LSP references"
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
@@ -63,9 +57,6 @@ return {
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
     end
 
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
     local x = vim.diagnostic.severity
 
     vim.diagnostic.config({
@@ -78,87 +69,42 @@ return {
       severity_sort = true,
     })
 
-    -- configure html server
-    lspconfig["html"].setup({
-      capabilities = capabilities,
+    vim.lsp.config("*", {
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
       on_attach = on_attach,
     })
 
-    -- configure php server
-    lspconfig["intelephense"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure css server
-    lspconfig["cssls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure css variables server
-    lspconfig["css_variables"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure somesass_ls server
-    lspconfig["somesass_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure stylelint server
-    lspconfig["stylelint_lsp"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("stylelint_lsp", {
       filetypes = { "scss" },
       settings = {
         ["autoFixOnSave"] = true,
       },
     })
 
-    -- configure eslint server
-    lspconfig["eslint"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("eslint", {
       filetypes = { "javascript", "typescript" },
     })
 
-    -- configure typescript server
-    lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("ts_ls", {
       filetypes = { "typescript" },
     })
 
-    -- configure json server
-    lspconfig["jsonls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("jsonls", {
       filetypes = { "json" },
     })
 
-    -- configure emmet language server
-    lspconfig["emmet_language_server"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("emet_language_server", {
       filetypes = { "html", "php", "css", "scss" },
       init_options = { extensionsPath = { vim.fn.getcwd() .. "/" } },
     })
 
-    -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
+    vim.lsp.config("lua_ls", {
+      settings = {
         Lua = {
-          -- make the language server recognize "vim" global
           diagnostics = {
             globals = { "vim" },
           },
           workspace = {
-            -- make language server aware of runtime files
             library = {
               [vim.fn.expand("$VIMRUNTIME/lua")] = true,
               [vim.fn.stdpath("config") .. "/lua"] = true,
@@ -166,6 +112,20 @@ return {
           },
         },
       },
+    })
+
+    vim.lsp.enable({
+      "html",
+      "intelephense",
+      "cssls",
+      "css_variables",
+      "somesass_ls",
+      "stylelint_lsp",
+      "eslint",
+      "ts_ls",
+      "jsonls",
+      "emmet_language_server",
+      "lua_ls",
     })
   end,
 }

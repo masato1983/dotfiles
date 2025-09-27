@@ -31,11 +31,18 @@ keymap.set("n", "<leader>y", "^y$")
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
+-- 全角数字を半角数字に変換
+keymap.set("n", "<leader>zh", [[:%s/[０-９]/\=nr2char(char2nr(submatch(0)) - 0xFEE0)/ge<CR>]])
+keymap.set("x", "<leader>zh", [[:s/[０-９]/\=nr2char(char2nr(submatch(0)) - 0xFEE0)/ge<CR>]])
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+-- resize vertical splits (decrease/increase width)
+keymap.set("n", "<leader>wh", ":vertical resize -20<CR>")
+keymap.set("n", "<leader>wl", ":vertical resize +20<CR>")
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
