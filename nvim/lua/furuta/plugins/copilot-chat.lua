@@ -8,7 +8,7 @@ return {
     opts = {
       prompts = {
         Commit = {
-          prompt = "Write commit message for the change with commitizen convention in English. Keep the title under 50 characters. Format as a gitcommit code block.",
+          prompt = "Write commit message for the change with commitizen convention in English. Keep the title under 50 characters. Insert a newline after each sentence. Format as a gitcommit code block.",
           resources = {
             "gitdiff:staged",
           },
