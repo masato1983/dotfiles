@@ -6,11 +6,19 @@ return {
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
     opts = {
-      model = "gpt-5 mini",
-      window = {
-        layout = "vertical",
-        width = 0.5,
+      prompts = {
+        Commit = {
+          prompt = "Write commit message for the change with commitizen convention in English. Keep the title under 50 characters. Format as a gitcommit code block.",
+          resources = {
+            "gitdiff:staged",
+          },
+          description = "Write commit message for staged changes",
+        },
       },
+    },
+    config = function(_, opts)
+      require("CopilotChat").setup(opts)
+
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "gitcommit",
         callback = function()
@@ -21,7 +29,7 @@ return {
             { desc = "Generate Commit Message (CopilotChat)" }
           )
         end,
-      }),
-    },
+      })
+    end,
   },
 }
