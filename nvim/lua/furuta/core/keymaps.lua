@@ -31,9 +31,9 @@ keymap.set("n", "<leader>y", "^y$")
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
--- 全角数字を半角数字に変換
-keymap.set("n", "<leader>zh", [[:%s/[０-９]/\=nr2char(char2nr(submatch(0)) - 0xFEE0)/ge<CR>]])
-keymap.set("x", "<leader>zh", [[:s/[０-９]/\=nr2char(char2nr(submatch(0)) - 0xFEE0)/ge<CR>]])
+-- 全角英数字を半角に変換
+keymap.set("n", "<leader>zh", [[:%s/[０-９Ａ-Ｚａ-ｚ]/\=nr2char(char2nr(submatch(0))-65248)/ge<CR>]])
+keymap.set("x", "<leader>zh", [[:s/[０-９Ａ-Ｚａ-ｚ]/\=nr2char(char2nr(submatch(0))-65248)/ge<CR>]])
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
