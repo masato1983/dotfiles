@@ -57,3 +57,6 @@ opt.showtabline = 0
 -- Markdonw ファイル編集時の wrap 有効化
 vim.cmd("autocmd FileType markdown setlocal wrap")
 vim.cmd("autocmd FileType mdx setlocal wrap")
+
+-- .htaccess.* の filetype を apacheconf に設定
+vim.cmd("autocmd BufNewFile,BufRead .htaccess.* set filetype=apacheconf")
