@@ -6,3 +6,10 @@ vim.filetype.add({
     ["%.htaccess%..*"] = "apache",
   },
 })
+
+-- *.php.* files should be recognized as PHP files
+vim.filetype.add({
+  pattern = {
+    [".*%.php%..*"] = "php",
+  },
+})
