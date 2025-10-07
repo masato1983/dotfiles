@@ -4,6 +4,7 @@ return {
   keys = {
     { "]w", "<cmd>NextTrailingWhitespace<CR>", desc = "Next trailing whitespace" },
     { "[w", "<cmd>PrevTrailingWhitespace<CR>", desc = "Previous trailing whitespace" },
+    { "<leader>sw", "<cmd>StripWhitespace<CR>", desc = "Strip whitespace" },
   },
   config = function()
     local function apply()
