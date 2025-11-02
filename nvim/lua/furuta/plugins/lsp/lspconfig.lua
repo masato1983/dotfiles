@@ -93,7 +93,7 @@ return {
       filetypes = { "json" },
     })
 
-    vim.lsp.config("emet_language_server", {
+    vim.lsp.config("emmet_language_server", {
       filetypes = { "html", "php", "css", "scss" },
       init_options = { extensionsPath = { vim.fn.getcwd() .. "/" } },
     })

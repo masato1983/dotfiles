@@ -5,10 +5,14 @@
     # テキストエディタ（コミット時に起動）
     editor = /opt/homebrew/bin/nvim
 
+[pager]
+    # git tag コマンドでページャーを使用しない
+    tag = false
+
 [user]
     # ユーザー設定
     name = Masato Furuta
-    
+
     # ユーザーのメールアドレス設定
     email = 50264750+masato1983@users.noreply.github.com
 

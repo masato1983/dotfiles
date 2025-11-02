@@ -77,7 +77,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch npm web-search wp-cli rsync vscode history zsh-nvm)
+plugins=(git git-auto-fetch npm web-search wp-cli rsync vscode zsh-nvm)
 
 export NVM_AUTO_USE=true
 
@@ -131,6 +131,9 @@ eval "$(starship init zsh)"
 # [fzf](https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Atuin
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/masato/.docker/completions $fpath)
 autoload -Uz compinit
@@ -143,3 +146,6 @@ source <(jj util completion zsh)
 export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Broot
+source /Users/masato/.config/broot/launcher/bash/br

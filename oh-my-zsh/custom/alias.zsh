@@ -164,5 +164,8 @@ alias sc='shellcheck --color=always'
 # identify
 alias dis="identify -format 'サイズ: %b ピクセル寸法: %wx%h\n'"
 
+# history
+alias history='fc -li 1'
+
 # other
 alias portcheck8888='sudo lsof -P -i:8888'
