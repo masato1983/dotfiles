@@ -7,6 +7,8 @@ return {
   config = function()
     -- import nvim-autopairs
     local autopairs = require("nvim-autopairs")
+    local Rule = require("nvim-autopairs.rule")
+    local cond = require("nvim-autopairs.conds")
 
     -- configure autopairs
     autopairs.setup({
@@ -17,6 +19,14 @@ return {
         java = false, -- don't check treesitter on java
       },
     })
+
+    -- バックティックのデフォルトルールを削除後、
+    -- markdown と text（拡張子ない場合も含む） 以外のファイルタイプでのみバックティックを有効化
+    autopairs.remove_rule("`")
+
+    autopairs.add_rule(Rule("`", "`"):with_pair(cond.not_filetypes({ "markdown", "text" })):with_pair(function()
+      return vim.bo.filetype ~= ""
+    end))
 
     -- import nvim-autopairs completion functionality
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")

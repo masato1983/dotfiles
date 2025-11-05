@@ -37,7 +37,7 @@ return {
       local ext = filepath:match("^.+%.(.+)$") or ""
 
       -- マークダウン形式で整形
-      local markdown = filepath .. "\n\n```" .. ext .. "\n" .. content .. "\n```"
+      local markdown = filepath .. "\n\n```" .. ext .. "\n" .. content .. "```"
 
       -- クリップボードにコピー
       vim.fn.setreg("+", markdown)
