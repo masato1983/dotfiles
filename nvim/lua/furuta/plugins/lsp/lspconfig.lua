@@ -82,7 +82,7 @@ return {
     })
 
     vim.lsp.config("eslint", {
-      filetypes = { "javascript", "typescript" },
+      filetypes = { "javascript", "typescript", "json", "markdown" },
     })
 
     vim.lsp.config("ts_ls", {

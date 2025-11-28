@@ -149,3 +149,8 @@ export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"
 
 # Broot
 source /Users/masato/.config/broot/launcher/bash/br
+
+# Added by Antigravity
+export PATH="/Users/masato/.antigravity/antigravity/bin:$PATH"
+
+source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script

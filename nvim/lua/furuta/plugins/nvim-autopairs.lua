@@ -23,17 +23,20 @@ return {
     -- バックティックのデフォルトルールを削除後、
     -- markdown と text（拡張子ない場合も含む） 以外のファイルタイプでのみバックティックを有効化
     autopairs.remove_rule("`")
-
     autopairs.add_rule(Rule("`", "`"):with_pair(cond.not_filetypes({ "markdown", "text" })):with_pair(function()
       return vim.bo.filetype ~= ""
     end))
 
+    -- markdown と text でバックティック3つのオートペアーを追加
+    autopairs.add_rule(Rule("```", "```", { "markdown", "text" }):with_pair(function()
+      -- ファイルタイプが空文字列の場合も有効にする
+      return vim.bo.filetype == "markdown" or vim.bo.filetype == "text" or vim.bo.filetype == ""
+    end))
+
     -- import nvim-autopairs completion functionality
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
     -- import nvim-cmp plugin (completions plugin)
     local cmp = require("cmp")
-
     -- make autopairs and completion work together
     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
   end,

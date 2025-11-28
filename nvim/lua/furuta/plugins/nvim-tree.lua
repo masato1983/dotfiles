@@ -12,6 +12,23 @@ return {
     vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
     vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
+    -- @ 付きの絶対パスをコピーする関数
+    local function copy_absolute_path_with_at_sign()
+      local api = require("nvim-tree.api")
+      local node = api.tree.get_node_under_cursor()
+
+      if not node then
+        vim.notify("No node selected", vim.log.levels.WARN)
+        return
+      end
+
+      local filepath = node.absolute_path
+      local path_with_at = "@" .. filepath
+
+      vim.fn.setreg("+", path_with_at)
+      vim.notify("Copied: " .. path_with_at, vim.log.levels.INFO)
+    end
+
     -- ファイル名と中身をマークダウン形式でコピーする関数
     local function copy_file_with_markdown()
       local api = require("nvim-tree.api")
@@ -37,7 +54,7 @@ return {
       local ext = filepath:match("^.+%.(.+)$") or ""
 
       -- マークダウン形式で整形
-      local markdown = filepath .. "\n\n```" .. ext .. "\n" .. content .. "```"
+      local markdown = "@" .. filepath .. "\n\n```" .. ext .. "\n" .. content .. "```\n\n"
 
       -- クリップボードにコピー
       vim.fn.setreg("+", markdown)
@@ -57,6 +74,7 @@ return {
 
       -- カスタムマッピングを追加
       vim.keymap.set("n", "gm", copy_file_with_markdown, opts("Copy file with markdown format"))
+      vim.keymap.set("n", "gY", copy_absolute_path_with_at_sign, opts("Copy path with @ prefix"))
     end
 
     -- configure nvim-tree

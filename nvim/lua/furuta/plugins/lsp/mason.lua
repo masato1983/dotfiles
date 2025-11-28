@@ -46,11 +46,11 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "stylelint", -- scss linter
-        "eslint", -- eslint linter
-        "markdownlint-cli2", -- markdown linter
+        "prettier",
+        "stylua",
+        "stylelint",
+        "eslint",
+        "markdownlint-cli2",
       },
     })
   end,
