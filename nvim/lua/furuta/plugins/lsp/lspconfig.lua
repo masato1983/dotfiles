@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
+    "saghen/blink.cmp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
@@ -70,7 +70,7 @@ return {
     })
 
     vim.lsp.config("*", {
-      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      capabilities = require("blink.cmp").get_lsp_capabilities(),
       on_attach = on_attach,
     })
 
@@ -79,14 +79,6 @@ return {
       settings = {
         ["autoFixOnSave"] = true,
       },
-    })
-
-    vim.lsp.config("eslint", {
-      filetypes = { "javascript", "typescript", "json", "markdown" },
-    })
-
-    vim.lsp.config("ts_ls", {
-      filetypes = { "typescript" },
     })
 
     vim.lsp.config("jsonls", {
