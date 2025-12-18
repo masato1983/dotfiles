@@ -119,5 +119,30 @@ return {
       "emmet_language_server",
       "lua_ls",
     })
+
+    vim.lsp.config("eslint", {
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+        "vue",
+        "svelte",
+        "astro",
+        "markdown",
+        "json",
+        "jsonc",
+      },
+      settings = {
+        validate = "on",
+        packageManager = "npm",
+        experimental = {
+          useFlatConfig = true,
+        },
+        run = "onType",
+      },
+    })
   end,
 }

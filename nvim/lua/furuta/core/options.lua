@@ -54,6 +54,9 @@ opt.inccommand = "split"
 -- tab 非表示
 opt.showtabline = 0
 
+-- ファイル末尾に改行を自動追加
+opt.fixendofline = true
+
 -- Markdonw ファイル編集時の wrap 有効化
 vim.cmd("autocmd FileType markdown setlocal wrap")
 vim.cmd("autocmd FileType mdx setlocal wrap")

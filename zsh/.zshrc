@@ -153,4 +153,5 @@ source /Users/masato/.config/broot/launcher/bash/br
 # Added by Antigravity
 export PATH="/Users/masato/.antigravity/antigravity/bin:$PATH"
 
+# Safe-chain
 source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script

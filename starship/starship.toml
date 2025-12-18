@@ -38,6 +38,13 @@ renamed = "»${count}"
 staged = "+${count}"
 stashed = "${count}"
 
+[nix_shell]
+format = '[$symbol$state]($style) '
+symbol = "❄️ "
+impure_msg = "devbox"
+pure_msg = "pure"
+style = "bold blue"
+
 [nodejs]
 format = ' [$symbol($version )]($style)'
 
