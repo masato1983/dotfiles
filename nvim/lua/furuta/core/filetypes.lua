@@ -13,3 +13,10 @@ vim.filetype.add({
     [".*%.php%..*"] = "php",
   },
 })
+
+-- *.code-snippets files should be recognized as JSONC files
+vim.filetype.add({
+  extension = {
+    ["code-snippets"] = "jsonc",
+  },
+})
