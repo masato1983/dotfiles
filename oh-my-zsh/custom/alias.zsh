@@ -108,9 +108,9 @@ alias fd6='fd --hidden --changed-within $(date -v-6d '+%Y-%m-%d') --type file -X
 alias fd7='fd --hidden --changed-within $(date -v-7d '+%Y-%m-%d') --type file -X eza --all --long --git --octal-permissions --icons=auto --color-scale=all --sort=modified --time-style="+%m-%d %H:%M"'
 
 # ripgrep
-alias rgh='rg --hidden'
+alias rgh='rg --hidden --glob "!.git" --glob "!package-lock.json"'
 alias rgl='rg --files-with-matches'
-alias rghl='rg --hidden --files-with-matches'
+alias rghl='rg --hidden --files-with-matches --glob "!.git" --glob "!package-lock.json"'
 
 # tree
 alias tree-all='tree -a -I .git'
