@@ -11,8 +11,8 @@ return {
   },
   config = function()
     local telescope = require("telescope")
-    local builtin = require("telescope.builtin")
     local actions = require("telescope.actions")
+    local builtin = require("telescope.builtin")
     local config = require("telescope.config")
     local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
     local keymap = vim.keymap
