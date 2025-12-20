@@ -107,8 +107,10 @@ alias fd5='fd --hidden --changed-within $(date -v-5d '+%Y-%m-%d') --type file -X
 alias fd6='fd --hidden --changed-within $(date -v-6d '+%Y-%m-%d') --type file -X eza --all --long --git --octal-permissions --icons=auto --color-scale=all --sort=modified --time-style="+%m-%d %H:%M"'
 alias fd7='fd --hidden --changed-within $(date -v-7d '+%Y-%m-%d') --type file -X eza --all --long --git --octal-permissions --icons=auto --color-scale=all --sort=modified --time-style="+%m-%d %H:%M"'
 
-# riggrep (Search string in files)
-alias rgg='rg --files-with-matches --no-messages'
+# ripgrep
+alias rgh='rg --hidden'
+alias rgl='rg --files-with-matches'
+alias rghl='rg --hidden --files-with-matches'
 
 # tree
 alias tree-all='tree -a -I .git'
