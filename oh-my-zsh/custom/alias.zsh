@@ -171,3 +171,21 @@ alias history='fc -li 1'
 
 # other
 alias portcheck8888='sudo lsof -P -i:8888'
+
+# gsed (GNU sed)
+alias sed-empty='gsed -i "/^$/d"'                               # 空行を削除
+alias sed-blank='gsed -i "/^[[:space:]]*$/d"'                   # 空白のみの行も削除
+alias sed-num='gsed -i "/^[0-9]*$/d"'                           # 数字だけの行を削除
+alias sed-alpha='gsed -i "/^[a-zA-Z]*$/d"'                      # アルファベットだけの行を削除
+alias sed-symbol='gsed -i "/^[[:punct:][:space:]]*$/d"'         # 記号・空白だけの行を削除
+alias sed-comment='gsed -i "/^#/d"'                             # コメント行を削除
+alias sed-trim='gsed -i "s/^[[:space:]]*//;s/[[:space:]]*$//"'  # 前後の空白を削除
+alias sed-ltrim='gsed -i "s/^[[:space:]]*//"'                   # 先頭の空白を削除
+alias sed-rtrim='gsed -i "s/[[:space:]]*$//"'                   # 末尾の空白を削除
+alias sed-spaces='gsed -i "s/[[:space:]]\+/ /g"'                # 連続する空白を1つに
+alias sed-lower='gsed -i "s/.*/\L&/"'                           # 小文字に変換
+alias sed-upper='gsed -i "s/.*/\U&/"'                           # 大文字に変換
+alias sed-first='gsed -i "1!d"'                                 # 最初の行のみ残す
+alias sed-last='gsed -i "$!d"'                                  # 最後の行のみ残す
+alias sed-nocolor='gsed -i "s/\x1b\[[0-9;]*m//g"'               # ANSIカラーコードを削除
+alias sed-crlf='gsed -i "s/\r$//"'                              # CRLF を LF に変換
