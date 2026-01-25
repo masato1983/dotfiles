@@ -1,0 +1,3 @@
+[submodule "oh-my-zsh/custom/plugins/pnpm"]
+	path = oh-my-zsh/custom/plugins/pnpm
+	url = https://github.com/ntnyq/omz-plugin-pnpm.git
