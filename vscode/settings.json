@@ -72,16 +72,12 @@
     "less.hover.references": false,
     "css.hover.references": false,
 
-    // theme
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-mocha",
-
     // other
     "explorer.compactFolders": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.tree.stickyScrollMaxItemCount": 2,
     "github.copilot.editor.enableAutoCompletions": true,
-    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": false,
     "[dockercompose]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -96,5 +92,17 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "chat.viewSessions.orientation": "stacked",
+    "docker.extension.enableComposeLanguageServer": false,
+    "chat.tools.terminal.autoApprove": {
+        "rg": true
+    },
+    "amp.url": "https://ampcode.com/",
+    "editor.wordBasedSuggestions": "off",
+    "amp.tab.enabled": true,
+    "workbench.sideBar.location": "right",
+    "github.copilot.enable": {
+        "*": false
+    }
 }

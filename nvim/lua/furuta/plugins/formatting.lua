@@ -9,15 +9,16 @@ return {
     local default_config = {
       formatters_by_ft = {
         sh = { "shfmt" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
+        javascript = { "eslint_d" },
+        typescript = { "eslint_d" },
         css = { "prettier", "stylelint" },
         scss = { "prettier", "stylelint" },
         html = { "prettier" },
         php = { "php_cs_fixer" },
-        json = { "prettier" },
+        json = { "eslint_d" },
+        jsonc = { "eslint_d" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
+        markdown = { "eslint_d" },
         mdx = { "prettier" },
         lua = { "stylua" },
         xml = { "prettier" },
@@ -25,7 +26,7 @@ return {
       format_on_save = {
         lsp_fallback = false,
         async = false,
-        timeout_ms = 10000,
+        timeout_ms = 2000,
       },
     }
 
@@ -38,8 +39,21 @@ return {
 
       current_file_dir = vim.fs.dirname(current_file_dir)
 
-      local root_markers = { ".git", "package.json", "composer.json", "init.lua" }
+      -- First, try to find .git directory (monorepo root)
+      local git_root = vim.fs.find(".git", { path = current_file_dir, upward = true })
 
+      if #git_root > 0 then
+        local root = vim.fs.dirname(git_root[1])
+        local nvim_config = root .. "/.nvim/conform.json"
+
+        -- Check if .nvim/conform.json exists at git root
+        if vim.fn.filereadable(nvim_config) == 1 then
+          return root
+        end
+      end
+
+      -- Fallback to nearest package root for non-monorepo or nested projects
+      local root_markers = { "package.json", "composer.json", "init.lua" }
       local found_markers = vim.fs.find(root_markers, { path = current_file_dir, upward = true })
 
       if #found_markers > 0 then
