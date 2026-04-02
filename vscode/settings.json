@@ -104,5 +104,6 @@
     "workbench.sideBar.location": "right",
     "github.copilot.enable": {
         "*": false
-    }
+    },
+    "amp.dangerouslyAllowAll": true
 }

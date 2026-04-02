@@ -31,5 +31,4 @@ Sites
 .zsh_history
 **/*.git
 **/*.min.css
-**/wp/wp-content/plugins
 **/wp/wp-include

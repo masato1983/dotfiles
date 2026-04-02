@@ -129,8 +129,6 @@ return {
         "typescript",
         "typescriptreact",
         "typescript.tsx",
-        "vue",
-        "svelte",
         "astro",
         "markdown",
         "json",

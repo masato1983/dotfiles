@@ -4,6 +4,7 @@
 
     # テキストエディタ（コミット時に起動）
     editor = /opt/homebrew/bin/nvim
+	excludesfile = /Users/masato/.gitignore_global
 
 [pager]
     # git tag コマンドでページャーを使用しない
@@ -110,3 +111,12 @@
 [pull]
     # git pull 実行時の rebase 設定
 	rebase = false
+
+[push]
+	autoSetupRemote = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
