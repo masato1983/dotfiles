@@ -76,6 +76,11 @@ return {
     })
 
     vim.lsp.config("stylelint_lsp", {
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+      end,
       filetypes = { "scss" },
       settings = {
         stylelint = {
