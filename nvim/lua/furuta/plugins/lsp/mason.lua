@@ -33,7 +33,6 @@ return {
         "cssls",
         "css_variables",
         "somesass_ls",
-        "stylelint_lsp",
         "eslint",
         "ts_ls",
         "lua_ls",
@@ -48,6 +47,7 @@ return {
       ensure_installed = {
         "prettier",
         "stylua",
+        "stylelint-language-server",
         "stylelint",
         "eslint",
         "markdownlint-cli2",

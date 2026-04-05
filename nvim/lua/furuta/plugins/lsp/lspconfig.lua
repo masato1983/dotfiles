@@ -78,7 +78,9 @@ return {
     vim.lsp.config("stylelint_lsp", {
       filetypes = { "scss" },
       settings = {
-        ["autoFixOnSave"] = true,
+        stylelint = {
+          validate = { "scss" },
+        },
       },
     })
 
