@@ -105,5 +105,15 @@
     "github.copilot.enable": {
         "*": false
     },
-    "amp.dangerouslyAllowAll": true
+    "amp.dangerouslyAllowAll": true,
+    "workbench.colorTheme": "Catppuccin Latte",
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://photoswipe.com": {
+            "approveRequest": false,
+            "approveResponse": true
+        },
+        "https://getuikit.com": true
+    }
 }

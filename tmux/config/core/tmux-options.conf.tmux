@@ -36,3 +36,8 @@ set-window-option -g mode-keys vi
 set -g allow-passthrough on
 set -ga update-environment TERM
 set -ga update-environment TERM_PROGRAM
+
+# Shift + Enter, Ctrl + Enter, Alt + Enter などの複数キーの組み合わせを tmux 内で認識できるようにします。
+# @see https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/tmux.md
+set -g extended-keys on
+set -g extended-keys-format csi-u

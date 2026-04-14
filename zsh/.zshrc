@@ -1,3 +1,5 @@
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,7 +79,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch npm web-search wp-cli rsync vscode zsh-nvm pnpm)
+plugins=(git git-auto-fetch npm web-search wp-cli rsync vscode zsh-nvm)
 
 export NVM_AUTO_USE=true
 
@@ -145,8 +147,6 @@ source <(jj util completion zsh)
 # Added by Windsurf
 export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"
 
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
 # Broot
 source /Users/masato/.config/broot/launcher/bash/br
 
@@ -159,3 +159,4 @@ source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization scrip
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
