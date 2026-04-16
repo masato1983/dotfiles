@@ -1,4 +1,12 @@
+# source antidote
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 
+# initialize plugins statically with ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+antidote load
+
+# initialize the prompt system
+autoload -Uz promptinit && promptinit
+prompt pure
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -126,9 +134,6 @@ eval "$(rbenv init - zsh)"
 
 # [zoxide](https://github.com/ajeetdsouza/zoxide)
 eval "$(zoxide init zsh)"
-
-# [starship](https://starship.rs/)
-eval "$(starship init zsh)"
 
 # [fzf](https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
