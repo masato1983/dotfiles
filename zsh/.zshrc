@@ -87,7 +87,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch npm web-search wp-cli rsync vscode zsh-nvm)
+plugins=(git git-auto-fetch)
 
 export NVM_AUTO_USE=true
 
