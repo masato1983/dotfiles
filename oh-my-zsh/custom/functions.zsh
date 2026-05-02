@@ -56,25 +56,6 @@ function extract_text_from_image {
 	done
 }
 
-# git
-gax() { gst | grep "$1" | awk '{print $NF}' | xargs git add && gst; }
-grx() { gst | grep "$1" | awk '{print $NF}' | xargs git restore --staged && gst; }
-gdx() { gst | grep "$1" | awk '{print $NF}' | xargs git diff; }
-glx() { glog --grep="$@" --no-merges; }
-
-# vim
-vx() { gst | grep "$1" | awk '{print $NF}' | xargs nvim; }
-
-# fd
-fd0x() { fd --hidden --changed-within $(date -v-0d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-0d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd1x() { fd --hidden --changed-within $(date -v-1d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-1d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd2x() { fd --hidden --changed-within $(date -v-2d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-2d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd3x() { fd --hidden --changed-within $(date -v-3d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-3d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd4x() { fd --hidden --changed-within $(date -v-4d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-4d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd5x() { fd --hidden --changed-within $(date -v-5d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-5d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd6x() { fd --hidden --changed-within $(date -v-6d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-6d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-fd7x() { fd --hidden --changed-within $(date -v-7d "+%Y-%m-%d") --type file | xargs eza --long | grep "$(date -v-7d "+%-d %-m")" | awk '{print $NF}' | xargs eza --all --long --git --octal-permissions --icons=auto --color-scale=size --sort=modified --time-style='+%m-%d %H:%M'; }
-
 # ディレクトリの再帰コピー（rsync版）
 # 使用例: syncdir /path/to/source /path/to/target
 function syncdir {
