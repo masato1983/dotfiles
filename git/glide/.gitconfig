@@ -1,6 +1,7 @@
 [user]
-	name = GlideArtsStudioMF
+	name = Masato Furuta
 	email = furuta@glide.co.jp
+    signingkey = /Users/masato/.ssh/id_ed25519_github_furuta_glide.pub
 
 [url "git@github-glide"]
     insteadOf = git@github.com
