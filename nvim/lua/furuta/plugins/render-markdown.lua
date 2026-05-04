@@ -8,8 +8,8 @@ return {
 
     require("render-markdown").setup({
       enabled = true,
-
-      keymap.set("n", "<leader>rm", ":RenderMarkdown toggle<CR>", opts),
     })
+
+    keymap.set("n", "<leader>rm", ":RenderMarkdown toggle<CR>", opts)
   end,
 }
