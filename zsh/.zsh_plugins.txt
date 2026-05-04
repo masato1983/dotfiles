@@ -6,3 +6,6 @@ sindresorhus/pure     kind:fpath
 # popular fish-like plugins
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting kind:defer
+
+# nvm wrapper
+lukechilds/zsh-nvm

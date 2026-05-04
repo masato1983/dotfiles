@@ -1,3 +1,7 @@
+# nvm
+export NVM_AUTO_USE=true
+export NVM_LAZY_LOAD=true
+
 # source antidote
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 
@@ -87,11 +91,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch)
+plugins=()
 
-export NVM_AUTO_USE=true
-
-source $ZSH/custom/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -143,16 +144,9 @@ compinit
 # JJ completion
 source <(jj util completion zsh)
 
-# Added by Windsurf
-export PATH="/Users/masato/.codeium/windsurf/bin:$PATH"
-
 # Added by Antigravity
 export PATH="/Users/masato/.antigravity/antigravity/bin:$PATH"
 
 # Safe-chain
 source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
