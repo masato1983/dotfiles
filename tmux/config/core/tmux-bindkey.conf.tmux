@@ -29,6 +29,32 @@ bind o popup -E -d "#{pane_current_path}" -w 90% -h 90% "opencode"
 # 設定ファイルの再読み込み
 bind r source-file ~/.tmux.conf \; display-message "Reloaded!"
 
+# tmux ペインと vim スプリット間のシームレスなナビゲーション
+# https://github.com/christoomey/vim-tmux-navigator
+#
+# README の "Add a snippet" 方式で、プラグイン本体を取得せずに tmux 側のキーバインドだけを定義します。
+# https://github.com/christoomey/vim-tmux-navigator#add-a-snippet
+#
+# macOS の `ps -o comm=` はフルパス（例: `/usr/local/bin/nvim`）を返すことがあり、
+# README デフォルトの `\S+\/` パターンは BSD の grep -E と相性が悪く nvim ペインを
+# 検出できないことがあります。POSIX 互換の文字クラスに置き換えています。
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +([[:alnum:]_./-]+/)?g?\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?$'"
+bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h' 'select-pane -L'
+bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j' 'select-pane -D'
+bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k' 'select-pane -U'
+bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l' 'select-pane -R'
+tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
+if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
+    "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
+    "bind-key -n 'C-\\\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+bind-key -T copy-mode-vi 'C-h' select-pane -L
+bind-key -T copy-mode-vi 'C-j' select-pane -D
+bind-key -T copy-mode-vi 'C-k' select-pane -U
+bind-key -T copy-mode-vi 'C-l' select-pane -R
+bind-key -T copy-mode-vi 'C-\' select-pane -l
+
 # [Sesh](https://github.com/joshmedeski/sesh)
 bind "T" run-shell "sesh connect \"$(
 	sesh list | fzf-tmux -p 55%,60% \

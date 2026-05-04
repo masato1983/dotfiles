@@ -51,9 +51,6 @@ if [ ! -d ~/.config/tmux ]; then
     ln -s ~/.dotfiles/tmux/config ~/.config/tmux
     tmux new -s "$(pwd | sed 's/.*\///g')"
     tmux source-file ~/.tmux.conf
-    ~/.tmux/plugins/tpm/bin/clean_plugins
-    ~/.tmux/plugins/tpm/bin/install_plugins
-    ~/.tmux/plugins/tpm/bin/update_plugins all
 else
     echo "Error: Directory ~/.config/tmux already exists."
 fi
